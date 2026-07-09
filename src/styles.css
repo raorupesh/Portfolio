@@ -27,6 +27,16 @@
   --radius-sm: 8px;
   --radius-md: 14px;
   --radius-lg: 20px;
+
+  --space-2xs: 2px;
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 20px;
+  --space-xl: 28px;
+  --space-2xl: 40px;
+  --space-3xl: 56px;
+  --space-4xl: 80px;
 }
 
 [data-theme='light'] {
@@ -58,7 +68,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 44px;
+  scroll-padding-top: 72px;
 }
 
 body {
@@ -66,6 +76,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-body);
+  font-size: 16px;
   -webkit-font-smoothing: antialiased;
   transition: background 0.25s ease, color 0.25s ease;
 }
@@ -386,7 +397,7 @@ button {
 .section {
   max-width: 1120px;
   margin: 0 auto;
-  padding: 56px 28px 80px;
+  padding: var(--space-3xl) var(--space-xl) var(--space-4xl);
   opacity: 1;
 }
 
@@ -450,7 +461,7 @@ section.is-visible {
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 32px;
+  padding: var(--space-xl);
 }
 
 .panel.stack {
@@ -529,10 +540,8 @@ section.is-visible {
 .hero {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
-  gap: 56px;
+  gap: var(--space-2xl);
   align-items: center;
-  padding-top: 64px;
-  padding-bottom: 64px;
 }
 
 .eyebrow {
@@ -716,11 +725,11 @@ section.is-visible {
 .project-card {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--space-lg);
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 26px;
+  padding: var(--space-xl);
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -768,9 +777,7 @@ section.is-visible {
   font-size: 17px;
 }
 
-.project-card p {
-  font-size: 14px;
-}
+
 
 .project-footer {
   display: flex;
@@ -794,7 +801,7 @@ section.is-visible {
   font-family: var(--font-mono);
   font-size: 11px;
   padding: 5px 9px;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   background: var(--surface);
   border: 1px solid var(--border);
   color: var(--text-faint);
@@ -850,7 +857,6 @@ section.is-visible {
 }
 
 .timeline-item p {
-  font-size: 14px;
   max-width: 560px;
 }
 
@@ -868,13 +874,11 @@ section.is-visible {
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 26px;
+  padding: var(--space-xl);
 }
 
 .testimonial p {
   color: var(--text-dim);
-  font-size: 15px;
-  line-height: 1.65;
 }
 
 .testimonial footer {
@@ -910,12 +914,12 @@ section.is-visible {
 .contact {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: var(--space-2xl);
   align-items: center;
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 56px;
+  padding: var(--space-2xl);
 }
 
 .contact .section-label {
@@ -1018,7 +1022,7 @@ section.is-visible {
   }
 
   .section-heading {
-    margin-bottom: 20px;
+    margin-bottom: var(--space-lg);
   }
 
   .section-heading h2 {
@@ -1034,12 +1038,6 @@ section.is-visible {
   }
 
   .status-secondary {
-    display: inline-flex;
-    flex-wrap: wrap;
-    gap: 4px;
-    width: 100%;
-    padding-left: 18px;
-    margin-top: 2px;
     font-size: 11px;
   }
 
@@ -1068,7 +1066,7 @@ section.is-visible {
 
   .timeline-item {
     grid-template-columns: 1fr;
-    gap: 6px;
+    gap: var(--space-md);
   }
 
   .nav {
