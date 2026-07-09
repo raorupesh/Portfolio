@@ -27,6 +27,12 @@ lerna-debug.log*
 
 # Vite
 .vite/
+vite.config.js
+vite.config.d.ts
+
+# Build artifacts
+tsconfig.tsbuildinfo
+tsconfig.node.tsbuildinfo
 
 # Optional
 .cache/
