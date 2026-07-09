@@ -127,7 +127,7 @@ export const site = {
     contact: {
       label: '07 \u00b7 Contact',
       heading: 'Let\u2019s talk about a role, a product, or a collaboration.',
-      note: 'If you need a builder who cares about both the interface and the implementation, email is the fastest way to reach me',
+      note: 'If you need a builder who cares about both the interface and the implementation, email is the fastest way to reach me.',
       links: {
         github: 'GitHub',
         linkedin: 'LinkedIn',

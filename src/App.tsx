@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { site } from './site'
+import { useActiveSection } from './hooks/useActiveSection'
 import { StatusBar } from './sections/StatusBar'
 import { Topbar } from './sections/Topbar'
 import { HeroSection } from './sections/HeroSection'
@@ -23,6 +24,8 @@ const getInitialTheme = () => {
 
 function App() {
   const [theme, setTheme] = useState<'dark' | 'light'>(getInitialTheme)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const activeSection = useActiveSection()
 
   useEffect(() => {
     document.title = site.title
@@ -34,11 +37,27 @@ function App() {
   }, [theme])
 
   const toggleTheme = () => setTheme((t) => (t === 'dark' ? 'light' : 'dark'))
+  const closeMobileMenu = useCallback(() => setMobileMenuOpen(false), [])
+
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setMobileMenuOpen(false)
+    }
+    document.addEventListener('keydown', onKeyDown)
+    return () => document.removeEventListener('keydown', onKeyDown)
+  }, [])
 
   return (
     <div className="page-shell" id="home">
       <StatusBar />
-      <Topbar theme={theme} toggleTheme={toggleTheme} />
+      <Topbar
+        theme={theme}
+        toggleTheme={toggleTheme}
+        activeSection={activeSection}
+        mobileMenuOpen={mobileMenuOpen}
+        toggleMobileMenu={() => setMobileMenuOpen((v) => !v)}
+        closeMobileMenu={closeMobileMenu}
+      />
       <main id="main-content">
         <HeroSection />
         <AboutSection />
@@ -50,6 +69,13 @@ function App() {
         <ContactSection />
         <FooterSection />
       </main>
+      {mobileMenuOpen && (
+        <div
+          className="mobile-nav-overlay open"
+          onClick={closeMobileMenu}
+          aria-hidden="true"
+        />
+      )}
     </div>
   )
 }

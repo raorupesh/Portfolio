@@ -2,6 +2,14 @@ import { site } from '../site'
 import { projects } from '../data'
 import { useReveal } from '../hooks/useReveal'
 
+const categoryColors: Record<string, string> = {
+  'AI Tooling + Backend': 'var(--accent-blue)',
+  'Full-Stack App': 'var(--accent)',
+  'SaaS + Mobile-Web': 'var(--accent-warm)',
+  'Flutter App': 'var(--accent-strong)',
+  'ML + IoT': 'var(--accent-blue)',
+}
+
 export function ProjectsSection() {
   const ref = useReveal<HTMLElement>()
 
@@ -20,7 +28,11 @@ export function ProjectsSection() {
           <article className="project-card" key={project.name}>
             <div className="project-card-top">
               <span className="status-chip">
-                <span className="status-chip-dot" aria-hidden="true" />
+                <span
+                  className="status-chip-dot"
+                  aria-hidden="true"
+                  style={{ background: categoryColors[project.category] || 'var(--accent)' }}
+                />
                 {project.category}
               </span>
               <span className="project-arrow" aria-hidden="true">↗</span>

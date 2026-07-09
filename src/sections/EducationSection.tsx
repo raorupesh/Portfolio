@@ -20,7 +20,10 @@ export function EducationSection() {
           {education.map((item) => (
             <div key={item.degree}>
               <h3>{item.degree}</h3>
-              <p>{item.school}</p>
+              <p>
+                {item.school}
+                {item.period ? <span style={{ color: 'var(--text-faint)' }}> · {item.period}</span> : null}
+              </p>
             </div>
           ))}
         </div>

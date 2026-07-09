@@ -60,13 +60,22 @@ export function HeroSection() {
           <span className="dot green" />
           <span className="terminal-title">{site.hero.terminalTitle} / {site.brand}</span>
         </div>
-        <pre className="terminal">{`${site.hero.terminalFields.name}        ${site.name}
-${site.hero.terminalFields.role}        ${site.role}
-${site.hero.terminalFields.location}    ${site.location}
-${site.hero.terminalFields.focus}       ${site.focus.join(', ')}
-${site.hero.terminalFields.status}      ${site.openToWork ? site.hero.statusAvailable : site.hero.statusBusy}
-${site.hero.terminalFields.replyTime}  ${site.responseTime}
-${site.hero.terminalFields.contact}     ${site.email}`}</pre>
+        <div className="terminal" style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: '0 20px' }}>
+          <span>{site.hero.terminalFields.name}</span>
+          <span>{site.name}</span>
+          <span>{site.hero.terminalFields.role}</span>
+          <span>{site.role}</span>
+          <span>{site.hero.terminalFields.location}</span>
+          <span>{site.location}</span>
+          <span>{site.hero.terminalFields.focus}</span>
+          <span>{site.focus.join(', ')}</span>
+          <span>{site.hero.terminalFields.status}</span>
+          <span>{site.openToWork ? site.hero.statusAvailable : site.hero.statusBusy}</span>
+          <span>{site.hero.terminalFields.replyTime}</span>
+          <span>{site.responseTime}</span>
+          <span>{site.hero.terminalFields.contact}</span>
+          <span>{site.email}</span>
+        </div>
       </div>
     </section>
   )

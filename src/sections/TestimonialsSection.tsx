@@ -25,12 +25,16 @@ export function TestimonialsSection() {
             </footer>
           </blockquote>
         ))}
-      </div>
-
-      <div className="hero-actions" style={{ marginTop: '24px' }}>
-        <a className="button secondary" href={site.linkedinRecommendations} target="_blank" rel="noreferrer">
-          {site.sections.testimonials.viewMore}
-        </a>
+        <div className="testimonial testimonial-cta">
+          <div>
+            <p style={{ color: 'var(--text-dim)', fontSize: '14px', margin: 0, marginBottom: '12px' }}>
+              See what others say about working with me.
+            </p>
+            <a className="button secondary" href={site.linkedinRecommendations} target="_blank" rel="noreferrer">
+              {site.sections.testimonials.viewMore} ↗
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   )

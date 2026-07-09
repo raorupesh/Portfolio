@@ -94,10 +94,12 @@ export const education = [
   {
     degree: 'Master of Science in Computer Science',
     school: 'Seattle University',
+    period: '2024 - 2025',
   },
   {
     degree: 'Bachelor of Technology in Computer Science',
     school: 'MIT Art, Design and Technology University',
+    period: '2017 - 2021',
   },
 ]
 

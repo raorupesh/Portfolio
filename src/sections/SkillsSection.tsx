@@ -31,7 +31,10 @@ export function SkillsSection() {
                 aria-valuemax={100}
                 aria-label={`${skill.name}: ${skill.level}%`}
               >
-                <div className="meter-fill" style={{ width: `${skill.level}%` }} />
+                <div
+                  className="meter-fill"
+                  style={{ '--meter-width': `${skill.level}%` } as React.CSSProperties}
+                />
               </div>
             </div>
           ))}

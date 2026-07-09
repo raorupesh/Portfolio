@@ -30,7 +30,6 @@ export function ContactSection() {
               {site.sections.contact.links.resume}
             </a>
           ) : null}
-          <a href="#home">{site.sections.contact.links.top}</a>
         </div>
       </div>
     </section>

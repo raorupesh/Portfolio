@@ -15,9 +15,10 @@ it('renders without crashing', () => {
 
 it('renders the nav with section links', () => {
   render(<App />)
-  expect(screen.getByLabelText(site.nav.ariaLabel)).toBeInTheDocument()
+  const nav = screen.getByLabelText(site.nav.ariaLabel)
+  expect(nav).toBeInTheDocument()
   site.nav.links.forEach((link) => {
-    expect(screen.getByText(link)).toBeInTheDocument()
+    expect(nav).toHaveTextContent(link)
   })
 })
 
@@ -38,12 +39,12 @@ it('shows open to work status', () => {
   expect(screen.getByText(site.status.open)).toBeInTheDocument()
 })
 
-it('has a theme toggle with aria-pressed', () => {
+it('has a theme toggle with aria-checked', () => {
   render(<App />)
   const darkBtn = screen.getByText(site.theme.dark)
   const lightBtn = screen.getByText(site.theme.light)
-  expect(darkBtn).toHaveAttribute('aria-pressed', 'true')
-  expect(lightBtn).toHaveAttribute('aria-pressed', 'false')
+  expect(darkBtn).toHaveAttribute('aria-checked', 'true')
+  expect(lightBtn).toHaveAttribute('aria-checked', 'false')
 })
 
 it('renders project cards', () => {

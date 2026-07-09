@@ -14,11 +14,13 @@ export function StatusBar() {
         <span className="status-text">
           {site.openToWork ? site.status.open : site.status.closed}
         </span>
-        <span className="status-sep" aria-hidden="true">/</span>
-        <span className="status-text muted">{site.responseTime}</span>
-        <span className="status-sep" aria-hidden="true">/</span>
-        <span className="status-text muted">
-          {localTime ? `${localTime} ${site.status.localSuffix}` : site.location} · {site.location}
+        <span className="status-secondary">
+          <span className="status-sep" aria-hidden="true">/</span>
+          <span className="status-text muted">{site.responseTime}</span>
+          <span className="status-sep" aria-hidden="true">/</span>
+          <span className="status-text muted">
+            {localTime ? `${localTime} ${site.status.localSuffix}` : site.location} · {site.location}
+          </span>
         </span>
       </div>
     </div>
