@@ -19,9 +19,9 @@ export function SkillsSection() {
         <div className="panel stack">
           {skillsWithLevels.map((skill) => (
             <div key={skill.name}>
-              <div className="project-card-top">
+              <div className="project-card-top" style={{ color: 'var(--text-dim)' }}>
                 <span>{skill.name}</span>
-                <span>{skill.level}%</span>
+                <span style={{ color: 'var(--text-faint)' }}>{skill.level}%</span>
               </div>
               <div
                 className="meter"

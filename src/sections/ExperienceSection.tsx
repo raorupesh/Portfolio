@@ -23,7 +23,7 @@ export function ExperienceSection() {
             </div>
             <div>
               <h3>{item.role}</h3>
-              <div className="timeline-company">
+              <div className="timeline-company" style={{ color: 'var(--text-dim)' }}>
                 {item.company} · {item.location}
               </div>
               <p>{item.summary}</p>

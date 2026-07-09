@@ -1,3 +1,4 @@
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { site } from '../site'
 import { useReveal } from '../hooks/useReveal'
 
@@ -19,15 +20,15 @@ export function ContactSection() {
           {site.email}
         </a>
         <div className="contact-links">
-          <a href={site.github} target="_blank" rel="noreferrer">
-            {site.sections.contact.links.github}
+          <a href={site.github} target="_blank" rel="noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+            <FaGithub /> {site.sections.contact.links.github}
           </a>
-          <a href={site.linkedin} target="_blank" rel="noreferrer">
-            {site.sections.contact.links.linkedin}
+          <a href={site.linkedin} target="_blank" rel="noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+            <FaLinkedin /> {site.sections.contact.links.linkedin}
           </a>
           {site.resumeUrl ? (
             <a href={site.resumeUrl} target="_blank" rel="noreferrer">
-              {site.sections.contact.links.resume}
+              {site.sections.contact.links.resume} ↗
             </a>
           ) : null}
         </div>

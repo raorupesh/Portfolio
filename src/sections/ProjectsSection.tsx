@@ -49,7 +49,7 @@ export function ProjectsSection() {
                 ))}
               </div>
               <a className="button secondary" href={project.href} target="_blank" rel="noreferrer">
-                {site.sections.projects.openProject}
+                {site.sections.projects.openProject} ↗
               </a>
             </div>
           </article>

@@ -12,17 +12,10 @@ export function HeroSection() {
         <h1 id="hero-title">
           {site.name}
           <br />
-          {site.role}
+          <span style={{ color: 'var(--text-dim)', fontWeight: 400 }}>{site.role}</span>
         </h1>
         <p className="lead">{site.headline}</p>
         <p className="lead muted">{site.intro}</p>
-
-        <div className="hero-meta" aria-label="Key focus areas">
-          {site.focus.slice(0, 3).map((focus) => (
-            <span key={focus}>{focus}</span>
-          ))}
-          <span>{site.location}</span>
-        </div>
 
         <div className="hero-actions">
           <a className="button primary" href="#contact">
@@ -30,12 +23,12 @@ export function HeroSection() {
           </a>
           {site.resumeUrl ? (
             <a className="button secondary" href={site.resumeUrl} target="_blank" rel="noreferrer">
-              {site.hero.actions.viewResume}
+              {site.hero.actions.viewResume} ↗
             </a>
           ) : null}
           {site.calendlyUrl ? (
             <a className="button secondary" href={site.calendlyUrl} target="_blank" rel="noreferrer">
-              {site.hero.actions.bookCall}
+              {site.hero.actions.bookCall} ↗
             </a>
           ) : null}
           <a className="button ghost" href="#projects">

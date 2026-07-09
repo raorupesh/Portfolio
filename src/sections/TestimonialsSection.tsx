@@ -18,7 +18,7 @@ export function TestimonialsSection() {
       <div className="testimonial-grid">
         {testimonials.map((item) => (
           <blockquote className="testimonial" key={item.person}>
-            <p>&ldquo;{item.quote}&rdquo;</p>
+            <p style={{ color: 'var(--text-dim)' }}>&ldquo;{item.quote}&rdquo;</p>
             <footer>
               <strong>{item.person}</strong>
               <span>{item.role}</span>

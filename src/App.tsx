@@ -47,6 +47,11 @@ function App() {
     return () => document.removeEventListener('keydown', onKeyDown)
   }, [])
 
+  useEffect(() => {
+    document.body.style.overflow = mobileMenuOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [mobileMenuOpen])
+
   return (
     <div className="page-shell" id="home">
       <StatusBar />
