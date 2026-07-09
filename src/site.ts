@@ -39,4 +39,105 @@ export const site = {
     spendMate: 'https://github.com/raorupesh/SpendMate',
     parking: 'https://github.com/raorupesh/Smart-Parking-Website',
   },
+
+  nav: {
+    links: ['About', 'Skills', 'Projects', 'Experience', 'Education', 'Testimonials', 'Contact'],
+    ariaLabel: 'Section navigation',
+  },
+
+  theme: {
+    dark: 'Dark',
+    light: 'Light',
+    ariaLabel: 'Theme toggle',
+  },
+
+  status: {
+    open: 'Open to new opportunities',
+    closed: 'Focused on current work',
+    openAria: 'Available for new opportunities',
+    closedAria: 'Currently focused on work',
+    localSuffix: 'local',
+  },
+
+  hero: {
+    terminalTitle: 'status',
+    terminalFields: {
+      name: 'name',
+      role: 'role',
+      location: 'location',
+      focus: 'focus',
+      status: 'status',
+      replyTime: 'reply time',
+      contact: 'contact',
+    },
+    statusAvailable: 'available for new roles',
+    statusBusy: 'heads down, currently building',
+    actions: {
+      hireMe: 'Hire me',
+      viewResume: 'View resume',
+      bookCall: 'Book a call',
+      viewWork: 'View work',
+    },
+  },
+
+  sections: {
+    about: {
+      label: '01 \u00b7 About',
+      heading: 'Practical engineering with clear communication.',
+      note:
+        'A focused summary of the kind of work I do, the problems I like to solve, and the impact I try to create.',
+      panels: [
+        { title: 'What I optimize for', text: 'Readable code, reliable delivery, and interfaces that make the product easier to use.' },
+        { title: 'Current focus', text: 'Front-end architecture, product-minded full-stack work, and AI-assisted workflows.' },
+        { title: 'Working style', text: 'Small iterations, direct feedback loops, and stable releases over flashy but fragile output.' },
+      ],
+    },
+    skills: {
+      label: '02 \u00b7 Skills',
+      heading: 'Core technologies and strengths.',
+      note: 'A compact view of the stack I use across product, platform, and AI work.',
+    },
+    projects: {
+      label: '03 \u00b7 Projects',
+      openProject: 'Open project',
+    },
+    experience: {
+      label: '04 \u00b7 Experience',
+      heading: 'Delivery across product and backend work.',
+      note: 'A condensed timeline of the environments and responsibilities I have worked in.',
+    },
+    education: {
+      label: '05 \u00b7 Education',
+      heading: 'Formal education and leadership.',
+      note: 'Academic background that supports the technical and communication side of the work.',
+      notesPanel: {
+        title: 'Leadership notes',
+        paragraphs: [
+          'I have worked best in environments where I can own execution, communicate tradeoffs clearly, and help the team stay aligned on outcomes.',
+          'The same pattern shows up in my project work: keep the surface simple, reduce avoidable complexity, and leave the codebase easier to maintain than I found it.',
+        ],
+      },
+    },
+    testimonials: {
+      label: '06 \u00b7 Testimonials',
+      heading: 'What collaborators say.',
+      note: 'Short excerpts only. The full set can live on LinkedIn.',
+      viewMore: 'View more on LinkedIn',
+    },
+    contact: {
+      label: '07 \u00b7 Contact',
+      heading: 'Let\u2019s talk about a role, a product, or a collaboration.',
+      note: 'If you need a builder who cares about both the interface and the implementation, email is the fastest way to reach me',
+      links: {
+        github: 'GitHub',
+        linkedin: 'LinkedIn',
+        resume: 'Resume',
+        top: 'Top',
+      },
+    },
+  },
+
+  footer: {
+    tagline: 'Built for fast, stable updates.',
+  },
 }

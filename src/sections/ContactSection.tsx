@@ -7,11 +7,10 @@ export function ContactSection() {
   return (
     <section className="section contact" id="contact" ref={ref}>
       <div>
-        <p className="section-label">07 · Contact</p>
-        <h2>Let&apos;s talk about a role, a product, or a collaboration.</h2>
+        <p className="section-label">{site.sections.contact.label}</p>
+        <h2>{site.sections.contact.heading}</h2>
         <p className="section-note">
-          If you need a builder who cares about both the interface and the implementation, email is the fastest way to
-          reach me {site.responseTime}.
+          {site.sections.contact.note} {site.responseTime}.
         </p>
       </div>
 
@@ -21,17 +20,17 @@ export function ContactSection() {
         </a>
         <div className="contact-links">
           <a href={site.github} target="_blank" rel="noreferrer">
-            GitHub
+            {site.sections.contact.links.github}
           </a>
           <a href={site.linkedin} target="_blank" rel="noreferrer">
-            LinkedIn
+            {site.sections.contact.links.linkedin}
           </a>
           {site.resumeUrl ? (
             <a href={site.resumeUrl} target="_blank" rel="noreferrer">
-              Resume
+              {site.sections.contact.links.resume}
             </a>
           ) : null}
-          <a href="#home">Top</a>
+          <a href="#home">{site.sections.contact.links.top}</a>
         </div>
       </div>
     </section>

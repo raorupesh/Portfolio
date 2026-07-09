@@ -1,3 +1,4 @@
+import { site } from '../site'
 import { education } from '../data'
 import { useReveal } from '../hooks/useReveal'
 
@@ -8,10 +9,10 @@ export function EducationSection() {
     <section className="section" id="education" ref={ref}>
       <div className="section-heading">
         <div>
-          <p className="section-label">05 · Education</p>
-          <h2>Formal education and leadership.</h2>
+          <p className="section-label">{site.sections.education.label}</p>
+          <h2>{site.sections.education.heading}</h2>
         </div>
-        <p className="section-note">Academic background that supports the technical and communication side of the work.</p>
+        <p className="section-note">{site.sections.education.note}</p>
       </div>
 
       <div className="grid-two">
@@ -25,15 +26,10 @@ export function EducationSection() {
         </div>
 
         <div className="panel">
-          <h3>Leadership notes</h3>
-          <p>
-            I have worked best in environments where I can own execution, communicate tradeoffs clearly, and help the
-            team stay aligned on outcomes.
-          </p>
-          <p>
-            The same pattern shows up in my project work: keep the surface simple, reduce avoidable complexity, and
-            leave the codebase easier to maintain than I found it.
-          </p>
+          <h3>{site.sections.education.notesPanel.title}</h3>
+          {site.sections.education.notesPanel.paragraphs.map((p, i) => (
+            <p key={i}>{p}</p>
+          ))}
         </div>
       </div>
     </section>

@@ -26,20 +26,20 @@ export function HeroSection() {
 
         <div className="hero-actions">
           <a className="button primary" href="#contact">
-            Hire me
+            {site.hero.actions.hireMe}
           </a>
           {site.resumeUrl ? (
             <a className="button secondary" href={site.resumeUrl} target="_blank" rel="noreferrer">
-              View resume
+              {site.hero.actions.viewResume}
             </a>
           ) : null}
           {site.calendlyUrl ? (
             <a className="button secondary" href={site.calendlyUrl} target="_blank" rel="noreferrer">
-              Book a call
+              {site.hero.actions.bookCall}
             </a>
           ) : null}
           <a className="button ghost" href="#projects">
-            View work
+            {site.hero.actions.viewWork}
           </a>
         </div>
 
@@ -58,15 +58,15 @@ export function HeroSection() {
           <span className="dot red" />
           <span className="dot amber" />
           <span className="dot green" />
-          <span className="terminal-title">status / {site.brand}</span>
+          <span className="terminal-title">{site.hero.terminalTitle} / {site.brand}</span>
         </div>
-        <pre className="terminal">{`name        ${site.name}
-role        ${site.role}
-location    ${site.location}
-focus       ${site.focus.join(', ')}
-status      ${site.openToWork ? 'available for new roles' : 'heads down, currently building'}
-reply time  ${site.responseTime}
-contact     ${site.email}`}</pre>
+        <pre className="terminal">{`${site.hero.terminalFields.name}        ${site.name}
+${site.hero.terminalFields.role}        ${site.role}
+${site.hero.terminalFields.location}    ${site.location}
+${site.hero.terminalFields.focus}       ${site.focus.join(', ')}
+${site.hero.terminalFields.status}      ${site.openToWork ? site.hero.statusAvailable : site.hero.statusBusy}
+${site.hero.terminalFields.replyTime}  ${site.responseTime}
+${site.hero.terminalFields.contact}     ${site.email}`}</pre>
       </div>
     </section>
   )

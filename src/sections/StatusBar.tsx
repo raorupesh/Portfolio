@@ -9,16 +9,16 @@ export function StatusBar() {
       <div className="status-bar-inner">
         <span className={`status-dot ${site.openToWork ? 'on' : 'off'}`} aria-hidden="true" />
         <span className="visually-hidden">
-          {site.openToWork ? 'Available for new opportunities' : 'Currently focused on work'}
+          {site.openToWork ? site.status.openAria : site.status.closedAria}
         </span>
         <span className="status-text">
-          {site.openToWork ? 'Open to new opportunities' : 'Focused on current work'}
+          {site.openToWork ? site.status.open : site.status.closed}
         </span>
         <span className="status-sep" aria-hidden="true">/</span>
         <span className="status-text muted">{site.responseTime}</span>
         <span className="status-sep" aria-hidden="true">/</span>
         <span className="status-text muted">
-          {localTime ? `${localTime} local` : site.location} · {site.location}
+          {localTime ? `${localTime} ${site.status.localSuffix}` : site.location} · {site.location}
         </span>
       </div>
     </div>

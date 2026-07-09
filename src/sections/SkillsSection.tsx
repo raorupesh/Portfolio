@@ -1,3 +1,4 @@
+import { site } from '../site'
 import { skillsWithLevels, skillCategories } from '../data'
 import { useReveal } from '../hooks/useReveal'
 
@@ -8,10 +9,10 @@ export function SkillsSection() {
     <section className="section" id="skills" ref={ref}>
       <div className="section-heading">
         <div>
-          <p className="section-label">02 · Skills</p>
-          <h2>Core technologies and strengths.</h2>
+          <p className="section-label">{site.sections.skills.label}</p>
+          <h2>{site.sections.skills.heading}</h2>
         </div>
-        <p className="section-note">A compact view of the stack I use across product, platform, and AI work.</p>
+        <p className="section-note">{site.sections.skills.note}</p>
       </div>
 
       <div className="grid-two">

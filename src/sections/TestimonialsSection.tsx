@@ -1,5 +1,5 @@
-import { testimonials } from '../data'
 import { site } from '../site'
+import { testimonials } from '../data'
 import { useReveal } from '../hooks/useReveal'
 
 export function TestimonialsSection() {
@@ -9,10 +9,10 @@ export function TestimonialsSection() {
     <section className="section" id="testimonials" ref={ref}>
       <div className="section-heading">
         <div>
-          <p className="section-label">06 · Testimonials</p>
-          <h2>What collaborators say.</h2>
+          <p className="section-label">{site.sections.testimonials.label}</p>
+          <h2>{site.sections.testimonials.heading}</h2>
         </div>
-        <p className="section-note">Short excerpts only. The full set can live on LinkedIn.</p>
+        <p className="section-note">{site.sections.testimonials.note}</p>
       </div>
 
       <div className="testimonial-grid">
@@ -29,7 +29,7 @@ export function TestimonialsSection() {
 
       <div className="hero-actions" style={{ marginTop: '24px' }}>
         <a className="button secondary" href={site.linkedinRecommendations} target="_blank" rel="noreferrer">
-          View more on LinkedIn
+          {site.sections.testimonials.viewMore}
         </a>
       </div>
     </section>

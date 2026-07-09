@@ -8,12 +8,10 @@ export function AboutSection() {
     <section className="section" id="about" ref={ref}>
       <div className="section-heading">
         <div>
-          <p className="section-label">01 · About</p>
-          <h2>Practical engineering with clear communication.</h2>
+          <p className="section-label">{site.sections.about.label}</p>
+          <h2>{site.sections.about.heading}</h2>
         </div>
-        <p className="section-note">
-          A focused summary of the kind of work I do, the problems I like to solve, and the impact I try to create.
-        </p>
+        <p className="section-note">{site.sections.about.note}</p>
       </div>
 
       <div className="grid-two">
@@ -25,18 +23,12 @@ export function AboutSection() {
         </div>
 
         <div className="panel stack">
-          <div>
-            <h3>What I optimize for</h3>
-            <p>Readable code, reliable delivery, and interfaces that make the product easier to use.</p>
-          </div>
-          <div>
-            <h3>Current focus</h3>
-            <p>Front-end architecture, product-minded full-stack work, and AI-assisted workflows.</p>
-          </div>
-          <div>
-            <h3>Working style</h3>
-            <p>Small iterations, direct feedback loops, and stable releases over flashy but fragile output.</p>
-          </div>
+          {site.sections.about.panels.map((panel) => (
+            <div key={panel.title}>
+              <h3>{panel.title}</h3>
+              <p>{panel.text}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

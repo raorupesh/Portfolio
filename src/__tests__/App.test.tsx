@@ -1,5 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import App from '../App'
+import { site } from '../site'
+import { projects, testimonials } from '../data'
 
 beforeEach(() => {
   localStorage.clear()
@@ -8,50 +10,47 @@ beforeEach(() => {
 
 it('renders without crashing', () => {
   render(<App />)
-  expect(screen.getAllByText(/Rupeshwar Rao/).length).toBeGreaterThan(0)
+  expect(screen.getAllByText(new RegExp(site.name)).length).toBeGreaterThan(0)
 })
 
 it('renders the nav with section links', () => {
   render(<App />)
-  expect(screen.getByLabelText('Section navigation')).toBeInTheDocument()
-  expect(screen.getByText('About')).toBeInTheDocument()
-  expect(screen.getByText('Skills')).toBeInTheDocument()
-  expect(screen.getByText('Projects')).toBeInTheDocument()
-  expect(screen.getByText('Experience')).toBeInTheDocument()
-  expect(screen.getByText('Education')).toBeInTheDocument()
-  expect(screen.getByText('Testimonials')).toBeInTheDocument()
-  expect(screen.getByText('Contact')).toBeInTheDocument()
+  expect(screen.getByLabelText(site.nav.ariaLabel)).toBeInTheDocument()
+  site.nav.links.forEach((link) => {
+    expect(screen.getByText(link)).toBeInTheDocument()
+  })
 })
 
 it('renders all major sections', () => {
   render(<App />)
-  expect(screen.getByText('01 · About')).toBeInTheDocument()
-  expect(screen.getByText('02 · Skills')).toBeInTheDocument()
-  expect(screen.getByText('03 · Projects')).toBeInTheDocument()
-  expect(screen.getByText('Selected work.')).toBeInTheDocument()
-  expect(screen.getByText('04 · Experience')).toBeInTheDocument()
-  expect(screen.getByText('05 · Education')).toBeInTheDocument()
-  expect(screen.getByText('06 · Testimonials')).toBeInTheDocument()
-  expect(screen.getByText('07 · Contact')).toBeInTheDocument()
+  expect(screen.getByText(site.sections.about.label)).toBeInTheDocument()
+  expect(screen.getByText(site.sections.skills.label)).toBeInTheDocument()
+  expect(screen.getByText(site.sections.projects.label)).toBeInTheDocument()
+  expect(screen.getByText(site.projectsLabel)).toBeInTheDocument()
+  expect(screen.getByText(site.sections.experience.label)).toBeInTheDocument()
+  expect(screen.getByText(site.sections.education.label)).toBeInTheDocument()
+  expect(screen.getByText(site.sections.testimonials.label)).toBeInTheDocument()
+  expect(screen.getByText(site.sections.contact.label)).toBeInTheDocument()
 })
 
 it('shows open to work status', () => {
   render(<App />)
-  expect(screen.getByText('Open to new opportunities')).toBeInTheDocument()
+  expect(screen.getByText(site.status.open)).toBeInTheDocument()
 })
 
 it('has a theme toggle with aria-pressed', () => {
   render(<App />)
-  const darkBtn = screen.getByText('Dark')
-  const lightBtn = screen.getByText('Light')
+  const darkBtn = screen.getByText(site.theme.dark)
+  const lightBtn = screen.getByText(site.theme.light)
   expect(darkBtn).toHaveAttribute('aria-pressed', 'true')
   expect(lightBtn).toHaveAttribute('aria-pressed', 'false')
 })
 
 it('renders project cards', () => {
   render(<App />)
-  expect(screen.getByText('Remorph - AI Code Refactoring Tool')).toBeInTheDocument()
-  expect(screen.getByText('Mean - Medium-like Blogging Platform')).toBeInTheDocument()
+  projects.slice(0, 2).forEach((project) => {
+    expect(screen.getByText(project.name)).toBeInTheDocument()
+  })
 })
 
 it('renders skill meters with ARIA attributes', () => {
@@ -67,7 +66,8 @@ it('renders skill meters with ARIA attributes', () => {
 
 it('renders testimonial blockquotes', () => {
   render(<App />)
-  expect(screen.getByText(/Great leader/)).toBeInTheDocument()
-  expect(screen.getByText(/Strong leadership/)).toBeInTheDocument()
-  expect(screen.getByText(/shows the kind of reliability/)).toBeInTheDocument()
+  testimonials.forEach(({ quote }) => {
+    const snippet = quote.split(' ').slice(0, 3).join(' ')
+    expect(screen.getByText(new RegExp(snippet))).toBeInTheDocument()
+  })
 })

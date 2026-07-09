@@ -9,7 +9,7 @@ export function ProjectsSection() {
     <section className="section" id="projects" ref={ref}>
       <div className="section-heading">
         <div>
-          <p className="section-label">03 · Projects</p>
+          <p className="section-label">{site.sections.projects.label}</p>
           <h2>{site.projectsLabel}</h2>
         </div>
         <p className="section-note">{site.projectsNote}</p>
@@ -37,7 +37,7 @@ export function ProjectsSection() {
                 ))}
               </div>
               <a className="button secondary" href={project.href} target="_blank" rel="noreferrer">
-                Open project
+                {site.sections.projects.openProject}
               </a>
             </div>
           </article>

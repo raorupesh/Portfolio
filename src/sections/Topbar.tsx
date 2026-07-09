@@ -15,23 +15,21 @@ export function Topbar({ theme, toggleTheme }: TopbarProps) {
         <span>{site.brandSuffix}</span>
       </div>
       <div className="topbar-actions">
-        <nav className="nav" aria-label="Section navigation">
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#experience">Experience</a>
-          <a href="#education">Education</a>
-          <a href="#testimonials">Testimonials</a>
-          <a href="#contact">Contact</a>
+        <nav className="nav" aria-label={site.nav.ariaLabel}>
+          {site.nav.links.map((link) => (
+            <a href={`#${link.toLowerCase()}`} key={link}>
+              {link}
+            </a>
+          ))}
         </nav>
-        <div className="theme-toggle" role="group" aria-label="Theme toggle">
+        <div className="theme-toggle" role="group" aria-label={site.theme.ariaLabel}>
           <button
             className={`theme-option ${isDark ? 'active' : ''}`}
             onClick={toggleTheme}
             type="button"
             aria-pressed={isDark}
           >
-            Dark
+            {site.theme.dark}
           </button>
           <button
             className={`theme-option ${!isDark ? 'active' : ''}`}
@@ -39,7 +37,7 @@ export function Topbar({ theme, toggleTheme }: TopbarProps) {
             type="button"
             aria-pressed={!isDark}
           >
-            Light
+            {site.theme.light}
           </button>
         </div>
       </div>

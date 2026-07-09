@@ -1,3 +1,4 @@
+import { site } from '../site'
 import { experience } from '../data'
 import { useReveal } from '../hooks/useReveal'
 
@@ -8,10 +9,10 @@ export function ExperienceSection() {
     <section className="section" id="experience" ref={ref}>
       <div className="section-heading">
         <div>
-          <p className="section-label">04 · Experience</p>
-          <h2>Delivery across product and backend work.</h2>
+          <p className="section-label">{site.sections.experience.label}</p>
+          <h2>{site.sections.experience.heading}</h2>
         </div>
-        <p className="section-note">A condensed timeline of the environments and responsibilities I have worked in.</p>
+        <p className="section-note">{site.sections.experience.note}</p>
       </div>
 
       <div className="timeline">
