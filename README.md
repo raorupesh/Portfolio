@@ -1,6 +1,6 @@
 # Portfolio
 
-Recruiter-friendly React portfolio built with Vite for GitHub Pages.
+Recruiter-friendly React portfolio built with Vite, deployed on Cloudflare Pages.
 
 ## Features
 
@@ -10,7 +10,7 @@ Recruiter-friendly React portfolio built with Vite for GitHub Pages.
 - Scroll-reveal animations (respects `prefers-reduced-motion`)
 - Environment-driven content via `src/site.ts`
 - SEO with Open Graph, Twitter Cards, and JSON-LD structured data
-- CI/CD via GitHub Actions (lint, build, deploy)
+- CI/CD via Cloudflare Pages (lint, build, deploy)
 
 ## Run locally
 
@@ -42,7 +42,7 @@ npm run format
 
 ## Deploy
 
-Push to `main` to trigger the GitHub Actions workflow, which lints, builds, and deploys to GitHub Pages.
+Connect the repository to Cloudflare Pages. Build command: `npm run build`. Output directory: `dist`. Each push to `main` is built and deployed automatically.
 
 ## Customize
 

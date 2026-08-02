@@ -1,6 +1,5 @@
 {
   "name": "portfolio",
-  "homepage": "https://raorupesh.github.io/Portfolio",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -26,12 +25,12 @@
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
     "@typescript-eslint/parser": "^8.0.0",
-    "@vitejs/plugin-react": "^4.3.1",
+    "@vitejs/plugin-react": "^4.5.0",
     "eslint": "^8.57.1",
     "jsdom": "^25.0.0",
     "prettier": "^3.4.2",
     "typescript": "^5.6.2",
-    "vite": "^5.4.8",
-    "vitest": "^2.1.0"
+    "vite": "^6.0.0",
+    "vitest": "^3.1.0"
   }
 }

@@ -1,7 +1,7 @@
 export const site = {
   title: 'Rupeshwar Rao | Software Engineer',
-  brand: 'raorupesh',
-  brandSuffix: '.github.io',
+  brand: 'rupeshwar',
+  brandSuffix: '.com',
   name: 'Rupeshwar Rao',
   role: 'Software Engineer',
   location: 'Seattle, WA',
