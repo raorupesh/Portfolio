@@ -12,6 +12,11 @@ export function useReveal<T extends HTMLElement>() {
       return
     }
 
+    if (typeof IntersectionObserver === 'undefined') {
+      el.classList.add('is-visible')
+      return
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

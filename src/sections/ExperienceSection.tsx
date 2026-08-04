@@ -27,6 +27,11 @@ export function ExperienceSection() {
                 {item.company} · {item.location}
               </div>
               <p>{item.summary}</p>
+              <ul className="timeline-points">
+                {item.points.map((point) => (
+                  <li key={point}>{point}</li>
+                ))}
+              </ul>
             </div>
           </article>
         ))}

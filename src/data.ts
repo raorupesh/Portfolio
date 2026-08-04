@@ -15,6 +15,14 @@ export type Experience = {
   location: string
   period: string
   summary: string
+  points: string[]
+}
+
+export type Publication = {
+  title: string
+  journal: string
+  authors: string
+  url: string
 }
 
 export type Testimonial = {
@@ -52,6 +60,15 @@ export const projects: Project[] = [
     href: site.projectUrls.echoJournal,
   },
   {
+    name: 'SecureOnboard - Auth Starter Kit',
+    category: 'Security + Auth',
+    description:
+      'A production-ready authentication boilerplate with JWT, role-based access control, and secure session management.',
+    impact: 'Reusable auth scaffold for rapid prototyping',
+    tags: ['JavaScript', 'JWT', 'Node.js', 'Express.js'],
+    href: site.projectUrls.secureOnboard,
+  },
+  {
     name: 'SpendMate - Group Expense Manager',
     category: 'Flutter App',
     description:
@@ -64,67 +81,115 @@ export const projects: Project[] = [
     name: 'Smart Parking System',
     category: 'ML + IoT',
     description:
-      'An end-to-end vehicle detection and classification system that connects sensor input, ML inference, and output handling.',
-    impact: 'Published research project',
-    tags: ['Python', 'Machine Learning', 'IoT'],
+      'An end-to-end vehicle detection and classification system connecting sensor input, ML inference, and a live web dashboard.',
+    impact: 'Published research with 7.4 SJIF',
+    tags: ['Python', 'Machine Learning', 'IoT', 'Flask'],
     href: site.projectUrls.parking,
   },
 ]
-
 export const experience: Experience[] = [
+  {
+    role: 'Enterprise Application Developer → Application Engineer',
+    company: 'ZS Associates',
+    location: 'India',
+    period: 'Dec 2021 - Aug 2024',
+    summary:
+      'Delivered enterprise-scale microservices, API optimization, and CI/CD pipelines across a 30-month tenure.',
+    points: [
+      'Reduced API latency by 40% and built microservices supporting 500K+ daily transactions.',
+      'Built Azure DevOps CI/CD pipelines that cut deployment time by 40% and improved release efficiency.',
+      'Developed a financial tracking tool used across all regions with zero production issues.',
+      'Built an Azure chatbot implementation and enhanced security across enterprise applications.',
+      'Improved system throughput by 30% through production metrics analysis and targeted optimizations.',
+      'Supported UAT, defect triage, and production deployments across four cross-functional teams.',
+    ],
+  },
   {
     role: 'Web Developer',
     company: 'Seattle University Events',
     location: 'United States',
-    period: '2025 - 2026',
+    period: 'Jun 2025 - Jun 2026',
     summary:
-      'Built and deployed full-stack event services on cloud infrastructure, adding observability and structured logging to cut down debugging time during live events.',
-  },
-  {
-    role: 'Enterprise Application Developer',
-    company: 'ZS Associates',
-    location: 'India',
-    period: '2021 - 2024',
-    summary:
-      'Developed and maintained enterprise-scale application modules in a structured SDLC environment, coordinating with cross-functional teams to ship features on schedule.',
+      'Built real-time dashboards and analytics tools that gave stakeholders continuous operational visibility.',
+    points: [
+      'Built real-time tracking and reporting dashboards eliminating 6+ hours/week of manual reporting.',
+      'Implemented WCAG 2.1 AA standards across university web properties for accessibility compliance.',
+      'Partnered with stakeholders to deliver automated reporting solutions using Python and JavaScript.',
+      'Coordinated with Facilities, IT, and admin teams across planning, development, and deployment.',
+    ],
   },
 ]
 
+export const publications: Publication[] = [
+  {
+    title: 'Agricultural Based Decisions: AGRODEC Web Application',
+    journal: 'Applied Science & Engineering Technology (IJRASET), Vol 10, Issue VI, June 2022',
+    authors: '',
+    url: 'https://doi.org/10.22214/ijraset.2022.45030',
+  },
+  {
+    title: 'Smart Parking System using Machine Learning and Internet of Things',
+    journal: 'Applied Science & Engineering Technology (IJRASET), Vol 9, Issue I, January 2021',
+    authors: '',
+    url: 'https://www.ijraset.com/fileserve.php?FID=32904',
+  },
+]
 export const education = [
   {
     degree: 'Master of Science in Computer Science',
     school: 'Seattle University',
-    period: '2024 - 2025',
+    period: 'Sep 2024 - Jun 2026',
+    honors: ['Graduate Representative, ACES'],
   },
   {
     degree: 'Bachelor of Technology in Computer Science',
     school: 'MIT Art, Design and Technology University',
-    period: '2017 - 2021',
+    period: '2018 - 2022',
+    honors: [
+      'Best Outgoing Boy, Computer Science Department',
+      'President, ACES Club',
+      'Chief Student Coordinator, Human Library',
+    ],
   },
 ]
 
-export const skillsWithLevels = [
-  { name: 'React & TypeScript', level: 95 },
-  { name: 'Node.js & Express', level: 90 },
-  { name: 'Next.js & Full-Stack', level: 88 },
-  { name: 'Python & ML', level: 85 },
-  { name: 'Angular', level: 80 },
-  { name: 'AWS & Cloud', level: 88 },
-  { name: 'PostgreSQL & MongoDB', level: 90 },
-  { name: 'Docker & DevOps', level: 82 },
-  { name: 'Flutter & Mobile', level: 78 },
-  { name: 'UI/UX Engineering', level: 88 },
-  { name: 'REST APIs & Microservices', level: 90 },
-  { name: 'System Design', level: 85 },
-]
-
 export const skillCategories = [
-  { name: 'Languages', items: ['TypeScript', 'JavaScript', 'Python', 'Dart'] },
-  { name: 'Frontend', items: ['React', 'Next.js', 'Angular', 'Flutter', 'TailwindCSS'] },
-  { name: 'Backend', items: ['Node.js', 'Express.js', 'REST APIs'] },
-  { name: 'Databases', items: ['PostgreSQL', 'MongoDB'] },
-  { name: 'Cloud & DevOps', items: ['AWS', 'Azure', 'Docker'] },
-  { name: 'AI / ML', items: ['Machine Learning', 'System Design'] },
+  {
+    name: 'Languages',
+    icon: 'code',
+    items: ['TypeScript', 'JavaScript', 'Python', 'Dart', 'SQL'],
+    accent: 'var(--accent)',
+  },
+  {
+    name: 'Frontend',
+    icon: 'layout',
+    items: ['React', 'Next.js', 'Angular', 'Flutter', 'TailwindCSS', 'HTML/CSS'],
+    accent: 'var(--accent-blue)',
+  },
+  {
+    name: 'Backend',
+    icon: 'server',
+    items: ['Node.js', 'Express.js', 'REST APIs', 'GraphQL'],
+    accent: 'var(--accent-warm)',
+  },
+  {
+    name: 'Data & Storage',
+    icon: 'database',
+    items: ['PostgreSQL', 'MongoDB', 'Firebase', 'Drizzle ORM'],
+    accent: 'var(--accent-strong)',
+  },
+  {
+    name: 'Cloud & DevOps',
+    icon: 'cloud',
+    items: ['Azure DevOps', 'AWS', 'Docker', 'CI/CD', 'Git'],
+    accent: 'var(--text-faint)',
+  },
+  {
+    name: 'AI / ML',
+    icon: 'brain',
+    items: ['Machine Learning', 'NLP', 'Gemini API', 'System Design'],
+    accent: 'var(--accent)',
+  },
 ]
 
 export const testimonials: Testimonial[] = [

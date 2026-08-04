@@ -35,14 +35,16 @@ export function ProjectsSection() {
                 />
                 {project.category}
               </span>
-              <span className="project-arrow" aria-hidden="true">↗</span>
+              <span className="project-arrow" aria-hidden="true">
+                ↗
+              </span>
             </div>
             <div>
               <h3>{project.name}</h3>
               <p>{project.description}</p>
             </div>
             <div className="project-footer">
-              <strong>{project.impact}</strong>
+              <p className="project-impact">{project.impact}</p>
               <div className="tag-list">
                 {project.tags.map((tag) => (
                   <span key={tag}>{tag}</span>

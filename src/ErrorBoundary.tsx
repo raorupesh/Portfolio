@@ -22,7 +22,17 @@ export class ErrorBoundary extends Component<Props, State> {
   render() {
     if (this.state.hasError) {
       return (
-        <div className="page-shell" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', padding: '40px', textAlign: 'center' }}>
+        <div
+          className="page-shell"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            minHeight: '100vh',
+            padding: '40px',
+            textAlign: 'center',
+          }}
+        >
           <div>
             <h1>Something went wrong</h1>
             <p style={{ color: 'var(--text-dim)' }}>Please refresh the page to try again.</p>

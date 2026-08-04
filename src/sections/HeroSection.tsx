@@ -51,7 +51,9 @@ export function HeroSection() {
           <span className="dot red" />
           <span className="dot amber" />
           <span className="dot green" />
-          <span className="terminal-title">{site.hero.terminalTitle} / {site.brand}</span>
+          <span className="terminal-title">
+            {site.hero.terminalTitle} / {site.brand}
+          </span>
         </div>
         <div className="terminal" style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: '0 20px' }}>
           <span>{site.hero.terminalFields.name}</span>

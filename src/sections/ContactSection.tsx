@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { EnvelopeIcon, GithubIcon, LinkedinIcon } from '../icons'
 import { site } from '../site'
 import { useReveal } from '../hooks/useReveal'
 
@@ -17,20 +17,16 @@ export function ContactSection() {
 
       <div className="contact-card">
         <a className="email-link" href={`mailto:${site.email}`}>
-          {site.email}
+          <EnvelopeIcon aria-hidden="true" className="email-icon" />
+          <span>{site.email}</span>
         </a>
         <div className="contact-links">
-          <a href={site.github} target="_blank" rel="noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-            <FaGithub /> {site.sections.contact.links.github}
+          <a href={site.github} target="_blank" rel="noreferrer" className="contact-link">
+            <GithubIcon aria-hidden="true" /> {site.sections.contact.links.github}
           </a>
-          <a href={site.linkedin} target="_blank" rel="noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-            <FaLinkedin /> {site.sections.contact.links.linkedin}
+          <a href={site.linkedin} target="_blank" rel="noreferrer" className="contact-link">
+            <LinkedinIcon aria-hidden="true" /> {site.sections.contact.links.linkedin}
           </a>
-          {site.resumeUrl ? (
-            <a href={site.resumeUrl} target="_blank" rel="noreferrer">
-              {site.sections.contact.links.resume} ↗
-            </a>
-          ) : null}
         </div>
       </div>
     </section>

@@ -4,9 +4,12 @@ Recruiter-friendly React portfolio built with Vite, deployed on Cloudflare Pages
 
 ## Features
 
-- Modern single-page layout with dark/light theme
-- Responsive design for desktop and mobile
-- Sections: about, skills, projects, experience, education, testimonials, contact
+- Modern single-page layout with dark/light theme (no flash-of-wrong-theme on load)
+- Smooth color transitions when switching themes (respects `prefers-reduced-motion`)
+- Self-hosted variable fonts — no external font requests, fast first paint
+- Responsive design for desktop and mobile with a sticky blur topbar
+- Sections: about, skills, projects, experience, education, github, testimonials, contact
+- Live GitHub section that pulls profile + recent repos from the GitHub API (cached in `localStorage` for 6h, graceful fallback when offline)
 - Scroll-reveal animations (respects `prefers-reduced-motion`)
 - Environment-driven content via `src/site.ts`
 - SEO with Open Graph, Twitter Cards, and JSON-LD structured data

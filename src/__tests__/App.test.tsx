@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
 import App from '../App'
 import { site } from '../site'
 import { projects, testimonials } from '../data'
@@ -22,53 +22,59 @@ it('renders the nav with section links', () => {
   })
 })
 
-it('renders all major sections', () => {
+it('renders all major sections', async () => {
   render(<App />)
   expect(screen.getByText(site.sections.about.label)).toBeInTheDocument()
   expect(screen.getByText(site.sections.skills.label)).toBeInTheDocument()
-  expect(screen.getByText(site.sections.projects.label)).toBeInTheDocument()
-  expect(screen.getByText(site.projectsLabel)).toBeInTheDocument()
-  expect(screen.getByText(site.sections.experience.label)).toBeInTheDocument()
-  expect(screen.getByText(site.sections.education.label)).toBeInTheDocument()
-  expect(screen.getByText(site.sections.testimonials.label)).toBeInTheDocument()
-  expect(screen.getByText(site.sections.contact.label)).toBeInTheDocument()
-})
-
-it('shows open to work status', () => {
-  render(<App />)
-  expect(screen.getByText(site.status.open)).toBeInTheDocument()
-})
-
-it('has a theme toggle with aria-checked', () => {
-  render(<App />)
-  const darkBtn = screen.getByText(site.theme.dark)
-  const lightBtn = screen.getByText(site.theme.light)
-  expect(darkBtn).toHaveAttribute('aria-checked', 'true')
-  expect(lightBtn).toHaveAttribute('aria-checked', 'false')
-})
-
-it('renders project cards', () => {
-  render(<App />)
-  projects.slice(0, 2).forEach((project) => {
-    expect(screen.getByText(project.name)).toBeInTheDocument()
+  await waitFor(() => {
+    expect(screen.getByText(site.sections.projects.label)).toBeInTheDocument()
+  })
+  await waitFor(() => {
+    expect(screen.getByText(site.projectsLabel)).toBeInTheDocument()
+  })
+  await waitFor(() => {
+    expect(screen.getByText(site.sections.experience.label)).toBeInTheDocument()
+  })
+  await waitFor(() => {
+    expect(screen.getByText(site.sections.education.label)).toBeInTheDocument()
+  })
+  await waitFor(() => {
+    expect(screen.getByText(site.sections.testimonials.label)).toBeInTheDocument()
+  })
+  await waitFor(() => {
+    expect(screen.getByText(site.sections.contact.label)).toBeInTheDocument()
   })
 })
 
-it('renders skill meters with ARIA attributes', () => {
+it('has a floating theme toggle button', () => {
   render(<App />)
-  const meters = document.querySelectorAll('[role="progressbar"]')
-  expect(meters.length).toBeGreaterThan(0)
-  meters.forEach((meter) => {
-    expect(meter).toHaveAttribute('aria-valuenow')
-    expect(meter).toHaveAttribute('aria-valuemin', '0')
-    expect(meter).toHaveAttribute('aria-valuemax', '100')
+  const fab = document.querySelector('.theme-fab')
+  expect(fab).toBeInTheDocument()
+  expect(fab).toHaveAttribute('type', 'button')
+  expect(fab).toHaveAttribute('aria-label')
+})
+
+it('renders project cards', async () => {
+  render(<App />)
+  await waitFor(() => {
+    projects.slice(0, 2).forEach((project) => {
+      expect(screen.getByText(project.name)).toBeInTheDocument()
+    })
   })
 })
 
-it('renders testimonial blockquotes', () => {
+it('renders skill category cards', () => {
   render(<App />)
-  testimonials.forEach(({ quote }) => {
-    const snippet = quote.split(' ').slice(0, 3).join(' ')
-    expect(screen.getByText(new RegExp(snippet))).toBeInTheDocument()
+  const pills = document.querySelectorAll('.bento-pill')
+  expect(pills.length).toBeGreaterThan(0)
+})
+
+it('renders testimonial blockquotes', async () => {
+  render(<App />)
+  await waitFor(() => {
+    testimonials.forEach(({ quote }) => {
+      const snippet = quote.split(' ').slice(0, 3).join(' ')
+      expect(screen.getByText(new RegExp(snippet))).toBeInTheDocument()
+    })
   })
 })

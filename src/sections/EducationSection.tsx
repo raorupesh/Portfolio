@@ -24,6 +24,13 @@ export function EducationSection() {
                 {item.school}
                 {item.period ? <span style={{ color: 'var(--text-faint)' }}> · {item.period}</span> : null}
               </p>
+              {item.honors && item.honors.length > 0 ? (
+                <ul className="timeline-points">
+                  {item.honors.map((h) => (
+                    <li key={h}>{h}</li>
+                  ))}
+                </ul>
+              ) : null}
             </div>
           ))}
         </div>

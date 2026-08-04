@@ -8,8 +8,7 @@ export const site = {
   timeZone: 'America/Los_Angeles',
   focus: ['React', 'TypeScript', 'UI Engineering', 'LLM Integration', 'Bot Services'],
   availability: ['Full Stack Engineer', 'AI Engineer', 'Product Engineer'],
-  headline:
-    'Building clean digital products that help teams move faster and feel confident in the work.',
+  headline: 'Building clean digital products that help teams move faster and feel confident in the work.',
   intro:
     'I create thoughtful front-end experiences, ship practical tools, and communicate technical decisions clearly.',
   aboutTitle: 'Full-stack engineer who ships, not just plans.',
@@ -25,10 +24,8 @@ export const site = {
   resumeUrl: '',
   calendlyUrl: '',
   github: 'https://github.com/raorupesh',
-  githubUsername: 'raorupesh',
   linkedin: 'https://www.linkedin.com/in/raorupeshwar',
-  linkedinRecommendations:
-    'https://www.linkedin.com/in/raorupeshwar/details/recommendations/',
+  linkedinRecommendations: 'https://www.linkedin.com/in/raorupeshwar/details/recommendations/',
   projectsLabel: 'Selected work.',
   projectsNote: 'Shipped products with real users, real constraints, and measurable outcomes.',
   certifications: [] as string[],
@@ -38,10 +35,20 @@ export const site = {
     echoJournal: 'https://github.com/raorupesh/EchoJournal-Mood-Booster',
     spendMate: 'https://github.com/raorupesh/SpendMate',
     parking: 'https://github.com/raorupesh/Smart-Parking-Website',
+    secureOnboard: 'https://github.com/raorupesh/SecureOnboard',
   },
 
   nav: {
-    links: ['About', 'Skills', 'Projects', 'Experience', 'Education', 'Testimonials', 'Contact'],
+    links: [
+      'About',
+      'Skills',
+      'Projects',
+      'Experience',
+      'Education',
+      'Publications',
+      'Testimonials',
+      'Contact',
+    ],
     ariaLabel: 'Section navigation',
   },
 
@@ -84,12 +91,20 @@ export const site = {
     about: {
       label: '01 \u00b7 About',
       heading: 'Practical engineering with clear communication.',
-      note:
-        'A focused summary of the kind of work I do, the problems I like to solve, and the impact I try to create.',
+      note: 'A focused summary of the kind of work I do, the problems I like to solve, and the impact I try to create.',
       panels: [
-        { title: 'What I optimize for', text: 'Readable code, reliable delivery, and interfaces that make the product easier to use.' },
-        { title: 'Current focus', text: 'Front-end architecture, product-minded full-stack work, and AI-assisted workflows.' },
-        { title: 'Working style', text: 'Small iterations, direct feedback loops, and stable releases over flashy but fragile output.' },
+        {
+          title: 'What I optimize for',
+          text: 'Readable code, reliable delivery, and interfaces that make the product easier to use.',
+        },
+        {
+          title: 'Current focus',
+          text: 'Front-end architecture, product-minded full-stack work, and AI-assisted workflows.',
+        },
+        {
+          title: 'Working style',
+          text: 'Small iterations, direct feedback loops, and stable releases over flashy but fragile output.',
+        },
       ],
     },
     skills: {
@@ -118,26 +133,31 @@ export const site = {
         ],
       },
     },
+    publications: {
+      label: '06 \u00b7 Publications',
+      heading: 'Research and published work.',
+      note: 'Peer-reviewed publications in applied science and engineering.',
+      viewPaper: 'View paper',
+    },
     testimonials: {
-      label: '06 \u00b7 Testimonials',
+      label: '07 \u00b7 Testimonials',
       heading: 'What collaborators say.',
       note: 'Short excerpts only. The full set can live on LinkedIn.',
       viewMore: 'View more on LinkedIn',
     },
     contact: {
-      label: '07 \u00b7 Contact',
+      label: '08 \u00b7 Contact',
       heading: 'Let\u2019s talk about a role, a product, or a collaboration.',
       note: 'If you need a builder who cares about both the interface and the implementation, email is the fastest way to reach me.',
       links: {
         github: 'GitHub',
         linkedin: 'LinkedIn',
-        resume: 'Resume',
         top: 'Top',
       },
     },
   },
 
   footer: {
-    tagline: 'Built for fast, stable updates.',
+    tagline: '',
   },
 }
