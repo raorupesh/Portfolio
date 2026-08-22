@@ -142,7 +142,7 @@ export const site = {
     testimonials: {
       label: '07 \u00b7 Testimonials',
       heading: 'What collaborators say.',
-      note: 'Short excerpts only. The full set can live on LinkedIn.',
+      note: 'Short excerpts only. The full set can be viewed on LinkedIn.',
       viewMore: 'View more on LinkedIn',
     },
     contact: {

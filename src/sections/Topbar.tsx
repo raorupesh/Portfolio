@@ -25,6 +25,7 @@ export function Topbar({ activeSection, mobileMenuOpen, toggleMobileMenu, closeM
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' })
       el.focus({ preventScroll: true })
+      window.history.pushState(null, '', `#${id}`)
     }
     closeMobileMenu()
   }

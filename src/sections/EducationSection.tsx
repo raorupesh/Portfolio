@@ -20,10 +20,7 @@ export function EducationSection() {
           {education.map((item) => (
             <div key={item.degree}>
               <h3>{item.degree}</h3>
-              <p>
-                {item.school}
-                {item.period ? <span style={{ color: 'var(--text-faint)' }}> · {item.period}</span> : null}
-              </p>
+              <p>{item.school}</p>
               {item.honors && item.honors.length > 0 ? (
                 <ul className="timeline-points">
                   {item.honors.map((h) => (

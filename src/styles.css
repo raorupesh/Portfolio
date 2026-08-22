@@ -319,9 +319,12 @@ html.theme-transition *::after {
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   cursor: pointer;
-  padding: 8px;
+  padding: 12px;
   flex-direction: column;
+  justify-content: center;
   gap: 4px;
+  min-width: 44px;
+  min-height: 44px;
   transition: border-color 0.15s ease;
 }
 
@@ -1240,6 +1243,20 @@ section.is-visible {
   }
 }
 
+@media (max-width: 900px) {
+  .topbar-inner {
+    justify-content: flex-end;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: flex;
+  }
+}
+
 @media (max-width: 640px) {
   .section {
     padding: 48px 24px 64px;
@@ -1283,14 +1300,6 @@ section.is-visible {
   .timeline-item {
     grid-template-columns: 1fr;
     gap: var(--space-md);
-  }
-
-  .nav {
-    display: none;
-  }
-
-  .mobile-toggle {
-    display: flex;
   }
 
   .mobile-nav-inner {
