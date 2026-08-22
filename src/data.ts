@@ -46,7 +46,7 @@ export const projects: Project[] = [
     category: 'Full-Stack App',
     description:
       'A blogging platform with auth, scheduling, image uploads, bookmarks, and self-documented API routes.',
-    impact: 'Built with JWT, Drizzle, and OpenAPI',
+    impact: 'Shipped solo, end-to-end from schema to UI',
     tags: ['Next.js', 'PostgreSQL', 'Drizzle ORM', 'TailwindCSS'],
     href: site.projectUrls.mean,
   },
@@ -55,7 +55,7 @@ export const projects: Project[] = [
     category: 'SaaS + Mobile-Web',
     description:
       'A journaling app for logging moods, tracking patterns, and reflecting on mental well-being over time.',
-    impact: 'Deployed on Azure with Google SSO',
+    impact: 'Live production SaaS, built and deployed solo',
     tags: ['Angular', 'Node.js', 'MongoDB', 'Mongoose'],
     href: site.projectUrls.echoJournal,
   },

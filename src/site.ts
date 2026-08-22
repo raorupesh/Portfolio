@@ -8,9 +8,9 @@ export const site = {
   timeZone: 'America/Los_Angeles',
   focus: ['React', 'TypeScript', 'UI Engineering', 'LLM Integration', 'Bot Services'],
   availability: ['Full Stack Engineer', 'AI Engineer', 'Product Engineer'],
-  headline: 'Building clean digital products that help teams move faster and feel confident in the work.',
+  headline: 'Full-stack engineer who ships production software, not just prototypes.',
   intro:
-    'I create thoughtful front-end experiences, ship practical tools, and communicate technical decisions clearly.',
+    '4+ years across React, Node.js, and Python — from customer-facing UI to the backend services behind it. Cut API latency 40% at enterprise scale and shipped 5+ products solo.',
   aboutTitle: 'Full-stack engineer who ships, not just plans.',
   aboutOne:
     '4+ years building production software across React, Node.js, and Python from customer-facing interfaces to the backend services behind them.',
@@ -21,7 +21,7 @@ export const site = {
   email: 'rupesh.inquiries@gmail.com',
   openToWork: true,
   responseTime: 'usually replies within 24h',
-  resumeUrl: '',
+  resumeUrl: '/Rupeshwar-Rao-Resume.pdf',
   calendlyUrl: '',
   github: 'https://github.com/raorupesh',
   linkedin: 'https://www.linkedin.com/in/raorupeshwar',
