@@ -10,7 +10,7 @@ export const site = {
   availability: ['Full Stack Engineer', 'AI Engineer', 'Product Engineer'],
   headline: 'Full-stack engineer who ships production software, not just prototypes.',
   intro:
-    '4+ years across React, Node.js, and Python — from customer-facing UI to the backend services behind it. Cut API latency 40% at enterprise scale and shipped 5+ products solo.',
+    '4+ years across React, Node.js, and Python from customer-facing UI to the backend services behind it. Cut API latency 40% at enterprise scale and shipped 5+ products solo.',
   aboutTitle: 'Full-stack engineer who ships, not just plans.',
   aboutOne:
     '4+ years building production software across React, Node.js, and Python from customer-facing interfaces to the backend services behind them.',

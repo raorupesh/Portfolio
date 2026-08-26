@@ -138,13 +138,11 @@ export const education = [
   {
     degree: 'Master of Science in Computer Science',
     school: 'Seattle University',
-    period: 'Sep 2024 - Jun 2026',
     honors: ['Graduate Representative, ACES'],
   },
   {
     degree: 'Bachelor of Technology in Computer Science',
     school: 'MIT Art, Design and Technology University',
-    period: '2018 - 2022',
     honors: [
       'Best Outgoing Boy, Computer Science Department',
       'President, ACES Club',
