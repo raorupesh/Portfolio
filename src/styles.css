@@ -83,6 +83,9 @@ body {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  /* iOS Safari treats body, not html, as the scrolling element — overflow-x
+     set only on html is silently ignored there, so mirror it here too. */
+  overflow-x: clip;
 }
 
 h1,
@@ -1196,6 +1199,7 @@ section.is-visible {
   max-width: 1200px;
   margin: 0 auto;
   padding: 32px 64px 60px;
+  border-top: 1px solid var(--border);
   text-align: center;
   font-size: 13px;
   color: var(--text-faint);
@@ -1315,6 +1319,15 @@ section.is-visible {
 
   .bento-grid {
     grid-template-columns: 1fr;
+  }
+
+  .card-grid,
+  .publications-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    padding: 32px 24px 48px;
   }
 
   .bento-wide {

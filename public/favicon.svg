@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <style>
+    .bg { fill: #0a0e14; }
+    .fg { stroke: #3ed598; }
+    .cursor { fill: #3ed598; }
+    @media (prefers-color-scheme: light) {
+      .bg { fill: #f3f5f8; }
+      .fg { stroke: #14a877; }
+      .cursor { fill: #14a877; }
+    }
+  </style>
+  <rect class="bg" width="64" height="64" rx="14" />
+  <path
+    class="fg"
+    d="M16 19 L31 32 L16 45"
+    fill="none"
+    stroke-width="7"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <rect class="cursor" x="34" y="41" width="14" height="7" rx="3.5" />
+</svg>
