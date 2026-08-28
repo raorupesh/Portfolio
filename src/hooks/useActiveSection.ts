@@ -4,24 +4,51 @@ export function useActiveSection() {
   const [activeId, setActiveId] = useState('')
 
   useEffect(() => {
-    const sections = document.querySelectorAll<HTMLElement>('section[id]')
-    if (sections.length === 0) return
+    const ratios = new Map<Element, number>()
+
+    const pickActive = () => {
+      let bestId = ''
+      let bestRatio = 0
+      for (const [el, ratio] of ratios) {
+        if (ratio > bestRatio) {
+          bestRatio = ratio
+          bestId = (el as HTMLElement).id
+        }
+      }
+      if (bestId) setActiveId(bestId)
+    }
 
     const observer = new IntersectionObserver(
       (entries) => {
-        let best: IntersectionObserverEntry | null = null
         for (const entry of entries) {
-          if (entry.isIntersecting && (!best || entry.intersectionRatio > best.intersectionRatio)) {
-            best = entry
-          }
+          ratios.set(entry.target, entry.isIntersecting ? entry.intersectionRatio : 0)
         }
-        if (best) setActiveId(best.target.id)
+        pickActive()
       },
       { rootMargin: '-60px 0px -70% 0px', threshold: [0, 0.25, 0.5, 0.75, 1] },
     )
 
-    sections.forEach((el) => observer.observe(el))
-    return () => observer.disconnect()
+    const observeNewSections = () => {
+      document.querySelectorAll<HTMLElement>('section[id]').forEach((el) => {
+        if (!ratios.has(el)) {
+          ratios.set(el, 0)
+          observer.observe(el)
+        }
+      })
+    }
+
+    observeNewSections()
+
+    // Projects/Experience/Education/Publications/Testimonials/Contact are
+    // React.lazy-loaded, so they mount after this effect's initial scan.
+    const mutationTarget = document.getElementById('main-content') ?? document.body
+    const mutationObserver = new MutationObserver(observeNewSections)
+    mutationObserver.observe(mutationTarget, { childList: true, subtree: true })
+
+    return () => {
+      observer.disconnect()
+      mutationObserver.disconnect()
+    }
   }, [])
 
   return activeId
