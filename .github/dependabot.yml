@@ -5,6 +5,11 @@ updates:
     schedule:
       interval: weekly
     open-pull-requests-limit: 5
+    # Major versions (React 19, TypeScript 7, ...) need real migration work, so upgrade those by hand.
+    # Security fixes are still raised for any version.
+    ignore:
+      - dependency-name: '*'
+        update-types: [version-update:semver-major]
     groups:
       dev-dependencies:
         dependency-type: development
