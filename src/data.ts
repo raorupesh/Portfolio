@@ -33,6 +33,24 @@ export type Testimonial = {
 
 export const projects: Project[] = [
   {
+    name: 'CodeScope - Code Search Server',
+    category: 'Systems + Search',
+    description:
+      'A C++20 code search server with a trigram inverted index, incremental re-indexing, a crash-safe on-disk index and a REST API with a web UI.',
+    impact: 'Searches never block on re-indexing',
+    tags: ['C++20', 'CMake', 'REST API', 'Docker'],
+    href: site.projectUrls.codeScope,
+  },
+  {
+    name: 'Causeway - Root Cause Analyzer',
+    category: 'Observability + ML',
+    description:
+      'Ingests OpenTelemetry traces, learns a Granger-causality graph between services, and walks it back from an incident to the service that started the cascade.',
+    impact: 'Names the origin, not just everything that turned red',
+    tags: ['Python', 'FastAPI', 'OpenTelemetry', 'React', 'D3.js'],
+    href: site.projectUrls.causeway,
+  },
+  {
     name: 'Remorph - AI Code Refactoring Tool',
     category: 'AI Tooling + Backend',
     description:
@@ -68,26 +86,22 @@ export const projects: Project[] = [
     tags: ['JavaScript', 'JWT', 'Node.js', 'Express.js'],
     href: site.projectUrls.secureOnboard,
   },
-  {
-    name: 'SpendMate - Group Expense Manager',
-    category: 'Flutter App',
-    description:
-      'A mobile-first expense splitting app with layered architecture and offline-first SQLite storage.',
-    impact: 'Offline-first by design',
-    tags: ['Flutter', 'Dart', 'Provider', 'SQLite'],
-    href: site.projectUrls.spendMate,
-  },
-  {
-    name: 'Smart Parking System',
-    category: 'ML + IoT',
-    description:
-      'An end-to-end vehicle detection and classification system connecting sensor input, ML inference, and a live web dashboard.',
-    impact: 'Published research with 7.4 SJIF',
-    tags: ['Python', 'Machine Learning', 'IoT', 'Flask'],
-    href: site.projectUrls.parking,
-  },
 ]
 export const experience: Experience[] = [
+  {
+    role: 'Web Developer',
+    company: 'Seattle University Events',
+    location: 'United States',
+    period: 'Jun 2025 - Jun 2026',
+    summary:
+      'Built real-time dashboards and analytics tools that gave stakeholders continuous operational visibility.',
+    points: [
+      'Built real-time tracking and reporting dashboards eliminating 6+ hours/week of manual reporting.',
+      'Implemented WCAG 2.1 AA standards across university web properties for accessibility compliance.',
+      'Partnered with stakeholders to deliver automated reporting solutions using Python and JavaScript.',
+      'Coordinated with Facilities, IT, and admin teams across planning, development, and deployment.',
+    ],
+  },
   {
     role: 'Enterprise Application Developer → Application Engineer',
     company: 'ZS Associates',
@@ -102,20 +116,6 @@ export const experience: Experience[] = [
       'Built an Azure chatbot implementation and enhanced security across enterprise applications.',
       'Improved system throughput by 30% through production metrics analysis and targeted optimizations.',
       'Supported UAT, defect triage, and production deployments across four cross-functional teams.',
-    ],
-  },
-  {
-    role: 'Web Developer',
-    company: 'Seattle University Events',
-    location: 'United States',
-    period: 'Jun 2025 - Jun 2026',
-    summary:
-      'Built real-time dashboards and analytics tools that gave stakeholders continuous operational visibility.',
-    points: [
-      'Built real-time tracking and reporting dashboards eliminating 6+ hours/week of manual reporting.',
-      'Implemented WCAG 2.1 AA standards across university web properties for accessibility compliance.',
-      'Partnered with stakeholders to deliver automated reporting solutions using Python and JavaScript.',
-      'Coordinated with Facilities, IT, and admin teams across planning, development, and deployment.',
     ],
   },
 ]
@@ -138,7 +138,7 @@ export const education = [
   {
     degree: 'Master of Science in Computer Science',
     school: 'Seattle University',
-    honors: ['Graduate Representative, ACES'],
+    honors: ['Spirit of CS Award recipient', 'Graduate Representative, ACES'],
   },
   {
     degree: 'Bachelor of Technology in Computer Science',
@@ -212,8 +212,8 @@ export const testimonials: Testimonial[] = [
 ]
 
 export const stats = [
-  { label: 'Projects shipped', value: '5+' },
+  { label: 'Projects shipped in industry', value: '20+' },
   { label: 'Languages', value: '8+' },
-  { label: 'Years active', value: '4+' },
+  { label: 'Years active', value: '3+' },
   { label: 'Response time', value: '<24h' },
 ]

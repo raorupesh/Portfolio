@@ -3,6 +3,8 @@ import { projects } from '../data'
 import { useReveal } from '../hooks/useReveal'
 
 const categoryColors: Record<string, string> = {
+  'Observability + ML': 'var(--accent-warm)',
+  'Systems + Search': 'var(--accent-strong)',
   'AI Tooling + Backend': 'var(--accent-blue)',
   'Full-Stack App': 'var(--accent)',
   'SaaS + Mobile-Web': 'var(--accent-warm)',

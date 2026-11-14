@@ -10,10 +10,10 @@ export const site = {
   availability: ['Full Stack Engineer', 'AI Engineer', 'Product Engineer'],
   headline: 'Full-stack engineer who ships production software, not just prototypes.',
   intro:
-    '4+ years across React, Node.js, and Python from customer-facing UI to the backend services behind it. Cut API latency 40% at enterprise scale and shipped 5+ products solo.',
+    '3+ years across React, Node.js, and Python from customer-facing UI to the backend services behind it. Cut API latency 40% at enterprise scale and shipped 5+ products solo.',
   aboutTitle: 'Full-stack engineer who ships, not just plans.',
   aboutOne:
-    '4+ years building production software across React, Node.js, and Python from customer-facing interfaces to the backend services behind them.',
+    '3+ years building production software across React, Node.js, and Python from customer-facing interfaces to the backend services behind them.',
   aboutTwo:
     'I have shipped 5+ end-to-end products solo, from a Gemini-powered code refactoring tool to a full auth-and-content blogging platform, so I can own a feature from database schema to deployed UI.',
   aboutThree:
@@ -27,14 +27,14 @@ export const site = {
   linkedin: 'https://www.linkedin.com/in/raorupeshwar',
   linkedinRecommendations: 'https://www.linkedin.com/in/raorupeshwar/details/recommendations/',
   projectsLabel: 'Selected work.',
-  projectsNote: 'Shipped products with real users, real constraints, and measurable outcomes.',
+  projectsNote: 'Personal projects I designed and built end to end, from systems tooling to full-stack apps.',
   certifications: [] as string[],
   projectUrls: {
+    causeway: 'https://github.com/raorupesh/Causeway',
+    codeScope: 'https://github.com/raorupesh/CodeScope',
     remorph: 'https://github.com/raorupesh/Remorph',
     mean: 'https://github.com/raorupesh/Mean_Blogging_Platform',
     echoJournal: 'https://github.com/raorupesh/EchoJournal-Mood-Booster',
-    spendMate: 'https://github.com/raorupesh/SpendMate',
-    parking: 'https://github.com/raorupesh/Smart-Parking-Website',
     secureOnboard: 'https://github.com/raorupesh/SecureOnboard',
   },
 
